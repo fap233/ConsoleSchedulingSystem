@@ -1,0 +1,14 @@
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.GeneratedMSBuildEditorConfig.editorconfig
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.AssemblyInfoInputs.cache
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.AssemblyInfo.cs
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.csproj.CoreCompileInputs.cache
+/home/fellipe/MyProjects/SchedulingConsoleSystem/bin/Debug/net9.0/SchedulingConsoleSystem
+/home/fellipe/MyProjects/SchedulingConsoleSystem/bin/Debug/net9.0/SchedulingConsoleSystem.deps.json
+/home/fellipe/MyProjects/SchedulingConsoleSystem/bin/Debug/net9.0/SchedulingConsoleSystem.runtimeconfig.json
+/home/fellipe/MyProjects/SchedulingConsoleSystem/bin/Debug/net9.0/SchedulingConsoleSystem.dll
+/home/fellipe/MyProjects/SchedulingConsoleSystem/bin/Debug/net9.0/SchedulingConsoleSystem.pdb
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.dll
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/refint/SchedulingConsoleSystem.dll
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.pdb
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/SchedulingConsoleSystem.genruntimeconfig.cache
+/home/fellipe/MyProjects/SchedulingConsoleSystem/obj/Debug/net9.0/ref/SchedulingConsoleSystem.dll
