@@ -4,61 +4,103 @@ Console.WriteLine("My Scheduling System");
 // 1. Create List
 List<Scheduling> schedulingList = new List<Scheduling>();
 
-// Create and Add "Ana Silva"
-Scheduling newScheduling1 = new Scheduling();
-newScheduling1.ClientName = "Ana Silva";
-newScheduling1.Email = "anasilva@email.com";
-newScheduling1.Phone = "40123456789";
-newScheduling1.Schedule = new DateTime(2025, 10, 31, 14, 0, 0);
-
-schedulingList.Add(newScheduling1);
-
-//Create and Add "José Silva"
-Scheduling newScheduling2 = new Scheduling();
-newScheduling2.ClientName = "José silva";
-newScheduling2.Email = "josesilva@email.com";
-newScheduling2.Phone = "50123456789";
-newScheduling2.Schedule = new DateTime(2025, 10, 31, 14, 0, 0);
-
-// schedulingList.Add(newScheduling2);
-
-bool horarioJaExiste = false;
-
-foreach (Scheduling item in schedulingList)
+while (true)
 {
-    if (item.Schedule == newScheduling2.Schedule)
+    Console.WriteLine("\n--- Main Menu ---");
+    Console.WriteLine("1. Add Scheduling");
+    Console.WriteLine("2. Show All Scheduling");
+    Console.WriteLine("3. Exit");
+    Console.Write("Select an option: ");
+
+    string option = Console.ReadLine();
+
+    if (option == "1")
     {
-        horarioJaExiste = true;
+        Console.Write("Enter Client Name: ");
+        string name = Console.ReadLine();
+
+        Console.Write("Enter Email: ");
+        string email = Console.ReadLine();
+
+        Console.Write("Enter Phone: ");
+        string phone = Console.ReadLine();
+
+        Console.Write("Scheduling date (ex: 14): ");
+        int hour = Convert.ToInt32(Console.ReadLine());
+
+        Scheduling userScheduling = new Scheduling();
+        userScheduling.ClientName = name;
+        userScheduling.Email = email;
+        userScheduling.Phone = phone;
+        userScheduling.Schedule = new DateTime(2025, 10, 31, hour, 0, 0);
+
+        AddScheduling(schedulingList, userScheduling);
     }
-}
-if (horarioJaExiste == false)
-{
-  schedulingList.Add(newScheduling2);
-  Console.WriteLine($"Agendamento para {newScheduling2.ClientName} adicionado!");
-}
-else
-{
-  Console.WriteLine($"Agendamento para {newScheduling2.ClientName} não pode ser adicionado, horário já existe!");
+    else if (option == "2")
+    {
+        Console.WriteLine("\n--- All Schedulings ---");
+        ShowAllScheduling(schedulingList);
+    }
+    else if (option == "3")
+    {
+        Console.WriteLine("Exiting...");
+        break;
+    }
+    else
+    {
+        Console.WriteLine("Invalid option. Please try again.");
+    }
 }
 
 //Print Data
 Console.WriteLine("---Novo Agendamento Criado ---");
 ShowAllScheduling(schedulingList);
 
+// Add Scheduling with conflict verification
+static void AddScheduling(List<Scheduling> list, Scheduling schedulingToAdd)
+{
+    // conflict verification
+    bool dateAlreadyTaken = false;
+
+    foreach (Scheduling item in list)
+    {
+        if (item.Schedule == schedulingToAdd.Schedule)
+        {
+            dateAlreadyTaken = true;
+        }
+    }
+
+    // add decision (if flag is false)
+    if (dateAlreadyTaken == false)
+    {
+        list.Add(schedulingToAdd);
+        Console.WriteLine($"Agendamento para {schedulingToAdd.ClientName} adicionado!");
+    }
+    else
+    {
+        Console.WriteLine(
+            $"Agendamento para {schedulingToAdd.ClientName} não pode ser adicionado, horário já existe!"
+        );
+    }
+}
+
+// Show all Scheduling
 static void ShowAllScheduling(List<Scheduling> listToShow)
 {
-  foreach (Scheduling item in listToShow)
-  {
-    Console.WriteLine($"Cliente: {item.ClientName}, Email: {item.Email}, Horário: {item.Schedule}");
-  }
+    foreach (Scheduling item in listToShow)
+    {
+        Console.WriteLine(
+            $"Cliente: {item.ClientName}, Email: {item.Email}, Horário: {item.Schedule}"
+        );
+    }
 }
 
 //Class Definition
 class Scheduling
 {
-  public int Id { get; set; }
-  public string ClientName { get; set; }
-  public string Email { get; set; }
-  public string Phone { get; set; }
-  public DateTime Schedule { get; set; }
+    public int Id { get; set; }
+    public string ClientName { get; set; }
+    public string Email { get; set; }
+    public string Phone { get; set; }
+    public DateTime Schedule { get; set; }
 }
